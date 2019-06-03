@@ -6786,7 +6786,7 @@ int main(int argc,char **argv)
 	else
 		strcpy(boardfilename,"newboard.map");
 
-	ExtInit();
+	//ExtInit();
 	/*_initkeys();
 	inittimer();
 
@@ -6839,6 +6839,8 @@ int main(int argc,char **argv)
 	}
 
 	return (0);
+
+
 
 	updatenumsprites();
 
