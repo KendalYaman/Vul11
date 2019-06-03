@@ -6771,22 +6771,24 @@ int main(int argc,char **argv)
 	char ch, quitflag;
 	long i, j, k;
 
-    _platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
+    /*_platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
 
     if (getenv("BUILD_NOPENTIUM") != NULL)
-        setmmxoverlay(0);
+        setmmxoverlay(0);*/
 
 	editstatus = 1;
-	if (argc >= 2)
-	{
+	/*if (argc >= 2)
+	{*/
 		strcpy(boardfilename,argv[1]);
 		if (strchr(boardfilename,'.') == 0)
 			strcat(boardfilename,".map");
-	}
+	/*}
 	else
-		strcpy(boardfilename,"newboard.map");
+		strcpy(boardfilename,"newboard.map");*/
 
-	ExtInit();
+	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum)
+
+	/*ExtInit();
 	_initkeys();
 	inittimer();
 
@@ -6877,7 +6879,7 @@ int main(int argc,char **argv)
                      * rcg08212000 Rewrote this to prompt for changes in
                      *  graphics mode, rather than through stdio later.
                      */
-                _idle();
+               /* _idle();
 
 				if (keystatus[0x15] != 0)
                 {
@@ -6893,18 +6895,18 @@ int main(int argc,char **argv)
                             _idle();
 
                         if (keystatus[0x15])  /* 'y' pressed. */
-                        {
+                       /* {
                             updatesector(startposx,startposy,&startsectnum);
                             saveboard(boardfilename,&startposx,&startposy,&startposz,&startang,&startsectnum);
                             ExtSaveMap(boardfilename);
                         } /* if */
-                    } /* if */
-                    break;
-                } /* if */
-			}
+                    //} /* if */
+                    //break;
+                /*} /* if */
+			/*}
 		}
-	}
-	uninittimer();
+	}*/
+	/*uninittimer();
 	uninitkeys();
 	ExtUnInit();
 	uninitengine();
@@ -6927,7 +6929,7 @@ int main(int argc,char **argv)
 	}
 	printf("Memory status: %ld(%ld) bytes\n",cachesize,artsize);
 	printf("%s\n",kensig);
-    printf("%s\n",PORTSIG);
+    printf("%s\n",PORTSIG);*/
 	return(0);
 }
 
