@@ -6786,7 +6786,7 @@ int main(int argc,char **argv)
 	else
 		strcpy(boardfilename,"newboard.map");*/
 
-	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum)
+	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
 
 	/*ExtInit();
 	_initkeys();
