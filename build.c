@@ -6774,26 +6774,20 @@ int main(int argc,char **argv)
     _platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
 
     if (getenv("BUILD_NOPENTIUM") != NULL)
-         setmmxoverlay(0);
+        setmmxoverlay(0);
 
 	editstatus = 1;
-	strcpy(boardfilename,argv[1]);
-	if (strchr(boardfilename,'.') == 0)
+	if (argc >= 2)
+	{
+		strcpy(boardfilename,argv[1]);
+		if (strchr(boardfilename,'.') == 0)
 			strcat(boardfilename,".map");
-	
-	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
-	return (0);
-	// if (argc >= 2)
-	// {
-	// 	strcpy(boardfilename,argv[1]);
-	// 	if (strchr(boardfilename,'.') == 0)
-	// 		strcat(boardfilename,".map");
-	// }
-	// else
-	// 	strcpy(boardfilename,"newboard.map");
+	}
+	else
+		strcpy(boardfilename,"newboard.map");
 
-	// ExtInit();
-	/*_initkeys();
+	/*ExtInit();
+	_initkeys();
 	inittimer();
 
 	loadpics("tiles000.art");
@@ -6845,8 +6839,6 @@ int main(int argc,char **argv)
 	}
 
 	return (0);
-
-
 
 	updatenumsprites();
 
