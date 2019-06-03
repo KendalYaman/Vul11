@@ -6778,6 +6778,9 @@ int main(int argc,char **argv)
 
 	editstatus = 1;
 	strcpy(boardfilename,argv[1]);
+	if (strchr(boardfilename,'.') == 0)
+			strcat(boardfilename,".map");
+	}
 	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
 	return (0);
 	// if (argc >= 2)
