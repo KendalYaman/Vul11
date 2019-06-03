@@ -6788,7 +6788,7 @@ int main(int argc,char **argv)
 
 	if (loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum) == -1)
 	{
-		initspritelists();
+		/*initspritelists();
 		posx = 32768;
 		posy = 32768;
 		posz = 0;
@@ -6797,12 +6797,12 @@ int main(int argc,char **argv)
 		numwalls = 0;
 		cursectnum = -1;
 		overheadeditor();
-		keystatus[buildkeys[14]] = 0;
+		keystatus[buildkeys[14]] = 0;*/
 	}
-	else
+	/*else
 	{
 		 ExtLoadMap(boardfilename);
-	}
+	}*/
 
 	/*ExtInit();
 	_initkeys();
