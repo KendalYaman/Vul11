@@ -77,7 +77,7 @@ ifeq ($(strip $(beos)),true)
 endif
 
 CFLAGS += -m32
-LDFLAGS += -m32 -L/emul/linux/x86/usr/lib
+LDFLAGS +=-m32 -L/emul/linux/x86/usr/lib
 ifeq ($(strip $(linux64)),true)
   CFLAGS += -m32
   LDFLAGS +=-m32 -L/emul/linux/x86/usr/lib
