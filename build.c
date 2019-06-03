@@ -6768,7 +6768,6 @@ void editinput(void)
 
 int main(int argc,char **argv)
 {
-	return (0);
 	char ch, quitflag;
 	long i, j, k;
 
