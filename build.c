@@ -6771,22 +6771,38 @@ int main(int argc,char **argv)
 	char ch, quitflag;
 	long i, j, k;
 
-    /*_platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
+    _platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
 
     if (getenv("BUILD_NOPENTIUM") != NULL)
-        setmmxoverlay(0);*/
+        setmmxoverlay(0);
 
 	editstatus = 1;
-	/*if (argc >= 2)
-	{*/
+	if (argc >= 2)
+	{
 	strcpy(boardfilename,argv[1]);
 	if (strchr(boardfilename,'.') == 0)
 		strcat(boardfilename,".map");
-	/*}
+	}
 	else
-		strcpy(boardfilename,"newboard.map");*/
+		strcpy(boardfilename,"newboard.map");
 
-	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
+	if (loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum) == -1)
+	{
+		initspritelists();
+		posx = 32768;
+		posy = 32768;
+		posz = 0;
+		ang = 1536;
+		numsectors = 0;
+		numwalls = 0;
+		cursectnum = -1;
+		overheadeditor();
+		keystatus[buildkeys[14]] = 0;
+	}
+	else
+	{
+		 ExtLoadMap(boardfilename);
+	}
 
 	/*ExtInit();
 	_initkeys();
