@@ -6779,9 +6779,9 @@ int main(int argc,char **argv)
 	editstatus = 1;
 	/*if (argc >= 2)
 	{*/
-		strcpy(boardfilename,argv[1]);
-		if (strchr(boardfilename,'.') == 0)
-			strcat(boardfilename,".map");
+	strcpy(boardfilename,argv[1]);
+	if (strchr(boardfilename,'.') == 0)
+		strcat(boardfilename,".map");
 	/*}
 	else
 		strcpy(boardfilename,"newboard.map");*/
