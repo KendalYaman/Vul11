@@ -46,6 +46,7 @@ LINKER = afl-gcc
 #-----------------------------------------------------------------------------#
 #USE_ASM := -DUSE_I386_ASM
 
+
 #-----------------------------------------------------------------------------#
 # Don't touch this unless you know what you are doing.
 #-----------------------------------------------------------------------------#
@@ -75,9 +76,9 @@ ifeq ($(strip $(beos)),true)
   networking := stubbed
   USE_ASM :=
 endif
-
 CFLAGS += -m32
 LDFLAGS +=-m32 -L/emul/linux/x86/usr/lib
+
 ifeq ($(strip $(linux64)),true)
   CFLAGS += -m32
   LDFLAGS +=-m32 -L/emul/linux/x86/usr/lib
