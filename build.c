@@ -6771,24 +6771,29 @@ int main(int argc,char **argv)
 	char ch, quitflag;
 	long i, j, k;
 
-    _platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
+    //_platform_init(argc, argv, "BUILD editor by Ken Silverman", "BUILD");
 
-    if (getenv("BUILD_NOPENTIUM") != NULL)
-        setmmxoverlay(0);
+    //if (getenv("BUILD_NOPENTIUM") != NULL)
+     //   setmmxoverlay(0);
 
 	editstatus = 1;
-	if (argc >= 2)
-	{
+	/*if (argc >= 2)
+	{*/
 		strcpy(boardfilename,argv[1]);
 		if (strchr(boardfilename,'.') == 0)
 			strcat(boardfilename,".map");
-	}
-	else
-		strcpy(boardfilename,"newboard.map");
+
+	loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
 
 	return (0);
 
-	/*ExtInit();
+
+
+	/*}
+	else
+		strcpy(boardfilename,"newboard.map");*/
+
+	ExtInit();
 	_initkeys();
 	inittimer();
 
@@ -6820,7 +6825,7 @@ int main(int argc,char **argv)
 
 	for(i=0;i<MAXSECTORS;i++) sector[i].extra = -1;
 	for(i=0;i<MAXWALLS;i++) wall[i].extra = -1;
-	for(i=0;i<MAXSPRITES;i++) sprite[i].extra = -1;*/
+	for(i=0;i<MAXSPRITES;i++) sprite[i].extra = -1;
 
 	if (loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum) == -1)
 	{
@@ -6839,8 +6844,6 @@ int main(int argc,char **argv)
 	{
 		 ExtLoadMap(boardfilename);
 	}
-
-	return (0);
 
 	updatenumsprites();
 
