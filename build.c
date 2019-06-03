@@ -6838,7 +6838,7 @@ int main(int argc,char **argv)
 		 ExtLoadMap(boardfilename);
 	}
 
-	return 0;
+	return (0);
 
 	updatenumsprites();
 
