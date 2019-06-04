@@ -6777,9 +6777,9 @@ int main(int argc,char **argv)
     //     setmmxoverlay(0);
 
 	editstatus = 1;
-	strcpy(boardfilename,argv[1]);
+	/*strcpy(boardfilename,argv[1]);
 		if (strchr(boardfilename,'.') == 0)
-			strcat(boardfilename,".map");
+			strcat(boardfilename,".map");*/
 	
 	//loadboard(boardfilename,&posx,&posy,&posz,&ang,&cursectnum);
 	 if (argc >= 2)
